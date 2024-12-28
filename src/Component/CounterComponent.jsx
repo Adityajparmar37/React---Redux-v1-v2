@@ -2,7 +2,9 @@ import React from "react";
 import { connect } from "react-redux";
 import { decrement, increment, reset } from "../Actions/counterActions";
 
-// store:
+// The reason we pass arguments (props) to the UserComponent function is because when using React Redux, the component is connected to the Redux store via the connect() function. This allows it to receive data (state) from the Redux store and actions (dispatch functions) as props.
+
+
 function CounterComponent({ count, increment, decrement, reset }) {
   return (
     <>
@@ -15,7 +17,6 @@ function CounterComponent({ count, increment, decrement, reset }) {
 }
 
 const mapStateToProps = (state) => {
-  console.log(state);
   return {
     count: state.counterReducer.count,
   };
