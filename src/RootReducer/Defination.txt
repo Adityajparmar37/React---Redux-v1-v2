@@ -1,0 +1,9 @@
+What is a Root Reducer?
+
+The root reducer is the primary reducer that combines all other reducers in a Redux application. It acts as a single entry point for all reducers, delegating actions to the appropriate sub-reducers.
+
+Why Use a Root Reducer?
+
+    Organize the state by splitting it into smaller, manageable pieces.
+    Allow different parts of the state to be handled by different reducers.
+    Simplify the management of complex applications.

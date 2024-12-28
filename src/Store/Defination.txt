@@ -1,0 +1,7 @@
+The store is a central object that holds the entire state tree of the application. It also provides methods to:
+
+Access the state (getState()).
+
+Dispatch actions (dispatch(action)).
+
+Subscribe to changes (subscribe()).
