@@ -1,17 +1,30 @@
 import React from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { connect } from "react-redux";
 import { decrement, increment, reset } from "../Actions/counterActions";
 
-export default function CounterComponent() {
-  const dispatch = useDispatch();
-  const count = useSelector((state) => state.counterReducer.count);
-  // console.log(count);
+// store:
+function CounterComponent({ count, increment, decrement, reset }) {
   return (
     <>
       <h1>{count}</h1>
-      <button onClick={() => dispatch(increment())}>+</button>
-      <button onClick={() => dispatch(decrement())}>-</button>
-      <button onClick={() => dispatch(reset())}>reset</button>
+      <button onClick={increment}>+</button>
+      <button onClick={decrement}>-</button>
+      <button onClick={reset}>reset</button>
     </>
   );
 }
+
+const mapStateToProps = (state) => {
+  console.log(state);
+  return {
+    count: state.counterReducer.count,
+  };
+};
+
+const mapDispatchToProps = {
+  increment,
+  decrement,
+  reset,
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(CounterComponent);
